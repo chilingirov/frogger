@@ -7,7 +7,7 @@ var Enemy = function(x, y) {
 
 // Update the enemy's position, multiply the position with dt
 Enemy.prototype.update = function(dt) {
-    this.speed = Math.random() * 200 + 1;
+    this.speed = Math.random() * 300 + 1;
     this.x += this.speed * dt;
     if (this.x > 500) {
         this.x = Math.random() - 600;
