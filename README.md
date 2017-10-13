@@ -1,7 +1,7 @@
 # Arcade game - Frogger
 This Project is part of the Udacity's Front-End Developer Nanodegree program.
 
-## Instruction
+## Instructions
 
 1. Clone the repository or download the zip file on your computer
 2. Open the index.html file in your browser
