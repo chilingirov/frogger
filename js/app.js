@@ -37,10 +37,11 @@ var Player = function(x, y) {
     this.x = 200;
     this.y = 400;
     this.score = 0;
-}
+};
+//Create a function to display the score on the screen
 Player.prototype.displayScore = function() {
-    var result = document.getElementById("score").innerHTML = this.score;
-}
+    document.getElementById("score").innerHTML = this.score;
+};
 
 //Update the player - reset his position if there is a collision or if he reach the water
 Player.prototype.update = function() {
@@ -49,8 +50,10 @@ Player.prototype.update = function() {
         this.y = 400;
         this.score++;
         this.displayScore();
+    } else {
+        this.checkCollision();
     }
-    this.checkCollision();
+
 };
 
 //Check for collision with the enemies
@@ -78,19 +81,19 @@ Player.prototype.render = function() {
 var player = new Player();
 //Move the player up, right, bootm and left
 Player.prototype.handleInput = function(key) {
-    if (key === 'right' && this.x < 400) {
+    if (key === "right" && this.x < 400) {
         this.x += 100;
     }
 
-    if (key === 'left' && this.x > 10) {
+    if (key === "left" && this.x > 10) {
         this.x -= 100;
     }
 
-    if (key === 'up' && this.y > 10) {
+    if (key === "up" && this.y > 10) {
         this.y -= 83;
     }
 
-    if (key === 'down' && this.y < 300) {
+    if (key === "down" && this.y < 300) {
         this.y += 83;
     }
 
@@ -99,12 +102,12 @@ Player.prototype.handleInput = function(key) {
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
-document.addEventListener('keyup', function(e) {
+document.addEventListener("keyup", function(e) {
     var allowedKeys = {
-        37: 'left',
-        38: 'up',
-        39: 'right',
-        40: 'down'
+        37: "left",
+        38: "up",
+        39: "right",
+        40: "down"
     };
 
     player.handleInput(allowedKeys[e.keyCode]);
