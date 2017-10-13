@@ -3,7 +3,7 @@ var Enemy = function(x, y) {
     this.x = x;
     this.y = y;
     this.sprite = 'images/enemy-bug.png';
-    this.speed = Math.random() * 200 + 1;
+    this.speed = Math.random() * (400 - 100) + 100;
 };
 
 // Update the enemy's position, multiply the position with dt
