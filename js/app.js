@@ -3,12 +3,13 @@ var Enemy = function(x, y) {
     this.x = x;
     this.y = y;
     this.sprite = 'images/enemy-bug.png';
+    this.speed = Math.random() * 200 + 1;
 };
 
 // Update the enemy's position, multiply the position with dt
 Enemy.prototype.update = function(dt) {
-    this.speed = Math.random() * 300 + 1;
-    this.x += this.speed * dt;
+    var speed = this.speed * dt;
+    this.x += speed;
     if (this.x > 500) {
         this.x = Math.random() - 600;
     }
